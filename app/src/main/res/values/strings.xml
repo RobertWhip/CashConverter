@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CashConverter</string>
+
+    <string name="leave">Leave</string>
+
+    <string-array name="currency_types">
+        <item>RUB</item>
+        <item>EUR</item>
+        <item>USD</item>
+    </string-array>
+
+</resources>

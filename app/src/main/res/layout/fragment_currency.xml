@@ -1,0 +1,205 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mechanic_pc.cashconverter.fragment.CurrencyFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="24dp"
+            app:srcCompat="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="40dp"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/s"
+            android:ems="10"
+            android:inputType="number"
+            android:textColor="@color/black"/>
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/number"
+            android:layout_below="@+id/s"
+            android:layout_toRightOf="@+id/number"
+            android:textColor="@color/black"
+            android:entries="@array/currency_types"/>
+
+        <Button
+            android:id="@+id/go"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/spinner"
+            android:layout_alignTop="@+id/spinner"
+            android:layout_toEndOf="@+id/spinner"
+            android:layout_toRightOf="@+id/spinner"
+            android:text="GO"
+            android:onClick="onCli"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/rub_ui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/number"
+            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="30dp"
+            android:textSize="22sp"
+            android:text="RUB"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/eur_ui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/rub_ui"
+            android:layout_alignStart="@+id/rub_ui"
+            android:layout_below="@+id/rub_ui"
+            android:layout_marginTop="30dp"
+            android:textSize="22sp"
+            android:text="EUR"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/usd_ui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/eur_ui"
+            android:layout_alignStart="@+id/eur_ui"
+            android:layout_below="@+id/eur_ui"
+            android:layout_marginTop="25dp"
+            android:textSize="22sp"
+            android:text="USD"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/buy_ui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Buy"
+            android:textSize="18sp"
+            android:layout_below="@+id/number"
+            android:layout_toLeftOf="@+id/s"
+            android:layout_toStartOf="@+id/s"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/sell_ui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sell"
+            android:textSize="18sp"
+            android:layout_alignBaseline="@+id/buy_ui"
+            android:layout_alignBottom="@+id/buy_ui"
+            android:layout_toRightOf="@+id/number"
+            android:layout_toEndOf="@+id/number"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/rub_sell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/rub_ui"
+            android:layout_alignLeft="@+id/sell_ui"
+            android:text="..."
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/rub_buy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/buy_ui"
+            android:layout_alignBottom="@+id/rub_ui"
+            android:text="..."
+            android:textSize="18sp"
+            android:layout_alignTop="@+id/rub_sell"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/eur_buy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/usd_ui"
+            android:layout_alignLeft="@+id/rub_buy"
+            android:layout_alignStart="@+id/rub_buy"
+            android:text="..."
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/usd_buy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/usd_ui"
+            android:layout_alignLeft="@+id/eur_buy"
+            android:layout_alignStart="@+id/eur_buy"
+            android:text="..."
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/usd_sell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/usd_buy"
+            android:layout_alignBottom="@+id/usd_buy"
+            android:layout_alignLeft="@+id/eur_sell"
+            android:layout_alignStart="@+id/eur_sell"
+            android:text="..."
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/eur_sell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/usd_ui"
+            android:layout_alignLeft="@+id/rub_sell"
+            android:layout_alignStart="@+id/rub_sell"
+            android:text="..."
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/s"
+            android:layout_centerHorizontal="true"
+            android:text="..."
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+    </RelativeLayout>
+
+</FrameLayout>
