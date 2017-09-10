@@ -1,12 +1,29 @@
 <resources>
     <string name="app_name">CashConverter</string>
 
-    <string name="leave">Leave</string>
+    <string name="rub_ui_text">RUB</string>
+    <string name="eur_ui_text">EUR</string>
+    <string name="usd_ui_text">USD</string>
 
-    <string-array name="currency_types">
-        <item>RUB</item>
-        <item>EUR</item>
-        <item>USD</item>
-    </string-array>
+    <string name="buy_ui_text">Buy(UAH)</string>
+    <string name="sell_ui_text">Sell(UAH)</string>
 
+    <string name="convert_button_text">Convert</string>
+    <string name="refresh_button_text">Refresh</string>
+
+    <string name="error_no_internet">No internet connection.</string>
+    <string name="error_no_internet_no_data">No internet connection. Cannot load the currency data.</string>
+    <string name="error_unknown">Unknown error.</string>
+    <string name="error_cannot_write_to_db">Cannot write the data to the DB.</string>
+    <string name="error_db_not_found">DB is not found.</string>
+    <string name="error_cannot_parse">Error when trying to parse the data. Please try again later.</string>
+    <string name="error_db_unavailable">Database unavailable.</string>
+
+    <string name="rub_text">rub</string>
+    <string name="eur_text">eur</string>
+    <string name="usd_text">usd</string>
+
+    <string name="status">Status</string>
+
+    <string name="loading">...</string>
 </resources>

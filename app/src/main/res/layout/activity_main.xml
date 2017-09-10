@@ -4,19 +4,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/leave"
-        android:textSize="16sp"
-        android:onClick="leave"
-        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="no"
+        android:text="@string/status"
         android:textSize="16sp"/>
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_below="@+id/msg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginEnd="34dp"
+            android:layout_marginRight="34dp"
+            android:text="@string/refresh_button_text"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
 
 </RelativeLayout>

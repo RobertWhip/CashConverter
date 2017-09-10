@@ -1,15 +1,14 @@
 package com.example.mechanic_pc.cashconverter.util;
 
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.widget.Toast;
 
+import com.example.mechanic_pc.cashconverter.db.CurrencyDatabaseHelper;
 import com.example.mechanic_pc.cashconverter.pojo.CurrencyData;
 
 import java.util.List;
